@@ -422,7 +422,7 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 //     result.textContent = "Select a unit";
 //   }
 // }
-// ==========================================================================VIDEO19
+// ==========================================================================VIDEO19 last revised (18 jan, 24)
 
 // introduction to array
 
@@ -505,53 +505,86 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // console.log(cobineString("Mr", "Shraban", "Chakma"));
 // ==========================================================================VIDEO22
 
-function generatePassword(
-  length,
-  includeLowerCase,
-  includeUpperCase,
-  includeNumbers,
-  includeSymbols
-) {
-  const lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
-  const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const numberChars = "0123456789";
-  const symbolChars = "!@#$%^&";
+// function generatePassword(
+//   length,
+//   includeLowerCase,
+//   includeUpperCase,
+//   includeNumbers,
+//   includeSymbols
+// ) {
+//   const lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
+//   const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   const numberChars = "0123456789";
+//   const symbolChars = "!@#$%^&";
 
-  let allowedChars = "";
-  let password = "";
+//   let allowedChars = "";
+//   let password = "";
 
-  allowedChars += includeLowerCase ? lowerCaseChars : "";
-  allowedChars += includeUpperCase ? upperCaseChars : "";
-  allowedChars += includeNumbers ? numberChars : "";
-  allowedChars += includeSymbols ? symbolChars : "";
+//   allowedChars += includeLowerCase ? lowerCaseChars : "";
+//   allowedChars += includeUpperCase ? upperCaseChars : "";
+//   allowedChars += includeNumbers ? numberChars : "";
+//   allowedChars += includeSymbols ? symbolChars : "";
 
-  if (length <= 0) {
-    return "Password length must be at least 1";
-  }
-  if (allowedChars.length === 0) {
-    return "At least one set of characters needs to be selected";
-  }
+//   if (length <= 0) {
+//     return "Password length must be at least 1";
+//   }
+//   if (allowedChars.length === 0) {
+//     return "At least one set of characters needs to be selected";
+//   }
 
-  for (let i = 0; i < length; i++) {
-    const randomIdx = Math.floor(Math.random() * allowedChars.length);
-    password += allowedChars[randomIdx];
-  }
+//   for (let i = 0; i < length; i++) {
+//     const randomIdx = Math.floor(Math.random() * allowedChars.length);
+//     password += allowedChars[randomIdx];
+//   }
 
-  return password;
-}
+//   return password;
+// }
 
-const passLength = 12;
-const includeLowerCase = true;
-const includeUpperCase = true;
-const includeNumbers = true;
-const includeSymbols = true;
+// const passLength = 12;
+// const includeLowerCase = true;
+// const includeUpperCase = true;
+// const includeNumbers = true;
+// const includeSymbols = true;
 
-console.log(
-  generatePassword(
-    passLength,
-    includeLowerCase,
-    includeUpperCase,
-    includeNumbers,
-    includeSymbols
-  )
-);
+// console.log(
+//   generatePassword(
+//     passLength,
+//     includeLowerCase,
+//     includeUpperCase,
+//     includeNumbers,
+//     includeSymbols
+//   )
+// );
+// ==========================================================================VIDEO23
+
+// callback - a function that is passed as an argument in another function
+// used to asynchronous operations:
+// 1. reading a file
+// 2. network requests
+// 3. interacting with databases
+
+// hello(goodBye);
+// goodBye();
+// function hello(callBack) {
+//   console.log("hello");
+//   callBack();
+// }
+
+// function goodBye() {
+//   console.log("goodBye");
+// }
+
+// function leave() {
+//   console.log("leave");
+// }
+
+// sum(displayResult, 1, 4);
+
+// function sum(callBack, x, y) {
+//   let result = x + y;
+//   callBack(result);
+// }
+
+// function displayResult(result) {
+//   console.log(result);
+// }
