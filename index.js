@@ -614,16 +614,47 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 //   console.log(elements);
 // }
 
-// ==========================================================================VIDEO24
+// ==========================================================================VIDEO25
 
 // .map() method iterates over each element, applies a specified function and returns a new array
 
-const dates = ["2024-1-20", "2024-3-15", "2025-3-15"];
+// const dates = ["2024-1-20", "2024-3-15", "2025-3-15"];
 
-const updatedDate = dates.map(formatDate);
-console.log(dates);
-console.log(updatedDate);
-function formatDate(element) {
-  const split = element.split("-");
-  return `${split[2]}.${split[1]}.${split[0]}`;
+// const updatedDate = dates.map(formatDate);
+// console.log(dates);
+// console.log(updatedDate);
+// function formatDate(element) {
+//   const split = element.split("-");
+//   return `${split[2]}.${split[1]}.${split[0]}`;
+// }
+
+// ==========================================================================VIDEO26
+
+// filter() method filters elements and return a new array
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7];
+
+// const evenNumbers = numbers.filter(isEven);
+// const oddNumbers = numbers.filter(isOdd);
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+
+// function isEven(element) {
+//   return element % 2 === 0;
+// }
+
+// function isOdd(element) {
+//   return element % 2 !== 0;
+// }
+
+const words = ["banana", "seaweed", "apple", "pineApple", "sugarcane"];
+const shortWords = words.filter(getShortWords);
+const longWords = words.filter(getLongWords);
+console.log(longWords);
+function getShortWords(element) {
+  return element.length <= 6;
+}
+
+function getLongWords(element) {
+  return element.length > 6;
 }
