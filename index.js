@@ -590,23 +590,40 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // }
 
 // ==========================================================================VIDEO24
+
+// forEach() method iterates over each element and applies a specified function
+
 // element, idx, array
-let fruits = ["apple", "banana", "watermelon", "orange"];
-// fruits.forEach(upperCase);
-// fruits.forEach(lowerCase);
-fruits.forEach(toCapital);
-fruits.forEach(displayElements);
-function toCapital(element, idx, array) {
-  array[idx] = element.charAt(0).toUpperCase() + element.slice(1);
-}
+// let fruits = ["apple", "banana", "watermelon", "orange"];
+// // fruits.forEach(upperCase);
+// // fruits.forEach(lowerCase);
+// fruits.forEach(toCapital);
+// fruits.forEach(displayElements);
+// function toCapital(element, idx, array) {
+//   array[idx] = element.charAt(0).toUpperCase() + element.slice(1);
+// }
 
-function lowerCase(element, idx, array) {
-  array[idx] = element.toLowerCase();
-}
+// function lowerCase(element, idx, array) {
+//   array[idx] = element.toLowerCase();
+// }
 
-function upperCase(element, idx, array) {
-  array[idx] = element.toUpperCase();
-}
-function displayElements(elements) {
-  console.log(elements);
+// function upperCase(element, idx, array) {
+//   array[idx] = element.toUpperCase();
+// }
+// function displayElements(elements) {
+//   console.log(elements);
+// }
+
+// ==========================================================================VIDEO24
+
+// .map() method iterates over each element, applies a specified function and returns a new array
+
+const dates = ["2024-1-20", "2024-3-15", "2025-3-15"];
+
+const updatedDate = dates.map(formatDate);
+console.log(dates);
+console.log(updatedDate);
+function formatDate(element) {
+  const split = element.split("-");
+  return `${split[2]}.${split[1]}.${split[0]}`;
 }
