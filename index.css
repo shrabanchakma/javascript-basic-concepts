@@ -1,0 +1,52 @@
+body {
+  font-family: Verdana;
+  text-align: center;
+  background-color: hsl(0, 0%, 95%);
+}
+
+h1 {
+  color: hsl(240, 78%, 53%);
+}
+
+#conversionForm {
+  max-width: 50%;
+  margin: auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px hsla(0, 0%, 0%, 0.164);
+}
+
+#textBox {
+  width: 50%;
+  text-align: center;
+  font-size: 2em;
+  border: 2px solid hsla(0, 0%, 0%, 0.562);
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+label {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+button {
+  background-color: hsl(0, 100%, 60%);
+  border: none;
+  font-size: 1.5em;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px 0px;
+  color: white;
+}
+
+button:hover {
+  background-color: hsl(0, 100%, 50%);
+}
+
+#result {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
