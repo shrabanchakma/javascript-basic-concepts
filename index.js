@@ -588,3 +588,25 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // function displayResult(result) {
 //   console.log(result);
 // }
+
+// ==========================================================================VIDEO24
+// element, idx, array
+let fruits = ["apple", "banana", "watermelon", "orange"];
+// fruits.forEach(upperCase);
+// fruits.forEach(lowerCase);
+fruits.forEach(toCapital);
+fruits.forEach(displayElements);
+function toCapital(element, idx, array) {
+  array[idx] = element.charAt(0).toUpperCase() + element.slice(1);
+}
+
+function lowerCase(element, idx, array) {
+  array[idx] = element.toLowerCase();
+}
+
+function upperCase(element, idx, array) {
+  array[idx] = element.toUpperCase();
+}
+function displayElements(elements) {
+  console.log(elements);
+}
