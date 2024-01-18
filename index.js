@@ -647,14 +647,41 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 //   return element % 2 !== 0;
 // }
 
-const words = ["banana", "seaweed", "apple", "pineApple", "sugarcane"];
-const shortWords = words.filter(getShortWords);
-const longWords = words.filter(getLongWords);
-console.log(longWords);
-function getShortWords(element) {
-  return element.length <= 6;
-}
+// const words = ["banana", "seaweed", "apple", "pineApple", "sugarcane"];
+// const shortWords = words.filter(getShortWords);
+// const longWords = words.filter(getLongWords);
+// console.log(longWords);
+// function getShortWords(element) {
+//   return element.length <= 6;
+// }
 
-function getLongWords(element) {
-  return element.length > 6;
-}
+// function getLongWords(element) {
+//   return element.length > 6;
+// }
+
+// ==========================================================================VIDEO26
+
+// reduce() reduces to a single element
+
+// const salary = [12, 34, 15, 16];
+
+// const total = salary.reduce(sum);
+// console.log(total);
+// function sum(accumulator, element) {
+//   return accumulator + element;
+// }
+
+// ==========================================================================VIDEO27
+// function expressions - a way to define functions as values or variables;
+
+// 1. callbacks in asynchronous operations
+// 2. Higher order functions
+// 3. Closures
+// 4. Event listeners
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const squareNums = numbers.map(function (element) {
+  return Math.pow(element, 2);
+});
+
+console.log(squareNums);
