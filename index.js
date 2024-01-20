@@ -678,10 +678,114 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // 2. Higher order functions
 // 3. Closures
 // 4. Event listeners
-const numbers = [1, 2, 3, 4, 5, 6];
+// const numbers = [1, 2, 3, 4, 5, 6];
 
-const squareNums = numbers.map(function (element) {
-  return Math.pow(element, 2);
-});
+// const squareNums = numbers.map(function (element) {
+//   return Math.pow(element, 2);
+// });
 
-console.log(squareNums);
+// console.log(squareNums);
+
+// ==========================================================================VIDEO28
+
+// arrow function = a concise way to write function expressions
+// good for simple functions that you use only once
+// (parameter) => some code
+
+// setTimeout(() => console.log("hello"), 3000);
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// const squares = numbers.map((element) => Math.pow(element, 2));
+// const qubes = numbers.map((element) => Math.pow(element, 3));
+// const evenNums = numbers.filter((elements) => elements % 2 === 0);
+// const total = numbers.reduce((accumulator, element) => accumulator + element);
+// console.log(total);
+
+// ==========================================================================VIDEO29
+
+// object = A collection of related properties and methods
+//          can represent real world objects (people, products, places)
+// object = {
+//              key::value,
+//              function
+//           }
+// properties = "things that an object has"
+
+// const person1 = {
+//   name: "shraban",
+//   age: 21,
+//   goKick: () => console.log("Shraban is kicking"),
+//   goPush: () => console.log("Shraban is pushing"),
+// };
+
+// person1.goKick();
+// person1.goPush();
+
+// ==========================================================================VIDEO29
+// this - a keyword where it holds reference of the object where this is used
+// the object depends on the immediate context
+
+// const person1 = {
+//   name: "shraban",
+//   age: 21,
+//   printAge: function () {
+//     console.log(`shraban is ${this.age} year old`);
+//   },
+//   printName: function () {
+//     console.log(`Hello my name is ${this.name}`);
+//   },
+// };
+
+// person1.printAge();
+// person1.printName();
+
+// ==========================================================================VIDEO30
+// constructor - constructor is a special method for defining properties and methods of objects
+
+// function Person(name, age, income, address) {
+//   (this.name = name),
+//     (this.age = age),
+//     (this.income = income),
+//     (this.address = address),
+//     (this.dialogue = function () {
+//       console.log(`bro my income is ${income}`);
+//     });
+// }
+
+// const empolyee1 = new Person("shraban", 21, 0, "uttara");
+// const empolyee2 = new Person("ritesh", 21, 25000, "ctg");
+
+// console.log(empolyee1.name);
+// console.log(empolyee2.name);
+
+// empolyee1.dialogue();
+// empolyee2.dialogue();
+
+// ==========================================================================VIDEO31
+// class - (es6 feature) provides a more structured and cleaner way to work with objects compared to traditional constructor functions
+//
+// class Product {
+//   constructor(name, price) {
+//     this.name = name;
+//     this.price = price;
+//   }
+
+//   displayProducts() {
+//     console.log(` name: ${this.name}`);
+//     console.log(`price: $${this.price.toFixed(2)}`);
+//   }
+
+//   calculateTotal(salesTax) {
+//     return this.price + this.price * salesTax;
+//   }
+// }
+
+// const product1 = new Product("shirt", 50.5);
+// product1.displayProducts();
+
+// const totalPrice = product1.calculateTotal(0.05);
+
+// console.log(`the total price will be: ${totalPrice}`);
+
+// ==========================================================================VIDEO32
