@@ -789,3 +789,74 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // console.log(`the total price will be: ${totalPrice}`);
 
 // ==========================================================================VIDEO32
+
+// static
+
+// class MathUtils {
+//   static PI = 3.14159;
+//   static showResult(result) {
+//     console.log(result);
+//   }
+//   static getDiameter(r) {
+//     return r * 2;
+//   }
+//   static getCircumference(r) {
+//     return 2 * this.PI * r;
+//   }
+// }
+
+// console.log(MathUtils.PI);
+// MathUtils.showResult(MathUtils.getDiameter(10));
+// MathUtils.showResult(MathUtils.getCircumference(10));
+
+// class User {
+//   static userCount = 0;
+//   constructor(userName) {
+//     this.userName = userName;
+//     User.userCount++;
+//   }
+//   static getUserCount() {
+//     console.log(`Total Users are ${User.userCount}`);
+//   }
+
+//   sayHello() {
+//     console.log(`Hello this is ${this.userName}`);
+//   }
+// }
+
+// const user1 = new User("shraban");
+// const user2 = new User("spongebob");
+// const user3 = new User("pattrick");
+// User.getUserCount();
+// ==========================================================================VIDEO33
+// inheritance - it allows new class to inherit properties and methods of another class(parent->child)
+class Animal {
+  isAlive = true;
+
+  eat() {
+    console.log(`${this.name} is eating`);
+  }
+
+  attack() {
+    console.log(`${this.name} is attacking`);
+  }
+}
+
+class Cat extends Animal {
+  name = "meow meow";
+}
+
+class Dog extends Animal {
+  name = "bow bow";
+}
+
+class Snake extends Animal {
+  name = "ssssss";
+}
+
+const cat = new Cat();
+const dog = new Dog();
+const snake = new Snake();
+
+console.log(cat.isAlive);
+dog.attack();
