@@ -830,33 +830,89 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // User.getUserCount();
 // ==========================================================================VIDEO33
 // inheritance - it allows new class to inherit properties and methods of another class(parent->child)
+// Helps Follow the Dry Principle Don't Repeat YourSelf
+// class Animal {
+//   isAlive = true;
+
+//   eat() {
+//     console.log(`${this.name} is eating`);
+//   }
+
+//   attack() {
+//     console.log(`${this.name} is attacking`);
+//   }
+// }
+
+// class Cat extends Animal {
+//   name = "meow meow";
+// }
+
+// class Dog extends Animal {
+//   name = "bow bow";
+// }
+
+// class Snake extends Animal {
+//   name = "ssssss";
+// }
+
+// const cat = new Cat();
+// const dog = new Dog();
+// const snake = new Snake();
+
+// console.log(cat.isAlive);
+// dog.attack();
+
+// ==========================================================================VIDEO34
+// super - keyword is used in classes to call the constructor or access the properties and methods of a parent(superClass)
+// this = this object;
+// super = the parent;
+// super - can also be used to access parent class method inside of a child class method
 class Animal {
-  isAlive = true;
-
-  eat() {
-    console.log(`${this.name} is eating`);
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
   }
 
-  attack() {
-    console.log(`${this.name} is attacking`);
+  move(speed) {
+    console.log(`${this.name} moves at ${speed}mph`);
   }
 }
 
-class Cat extends Animal {
-  name = "meow meow";
+class Rabbit extends Animal {
+  constructor(name, age, runSpeed) {
+    super(name, age);
+    this.runSpeed = runSpeed;
+  }
+  jump() {
+    console.log(`${this.name} is jumping`);
+    super.move(25);
+  }
 }
 
-class Dog extends Animal {
-  name = "bow bow";
+class Fish extends Animal {
+  constructor(name, age, swimSpeed) {
+    super(name, age);
+    this.swimSpeed = swimSpeed;
+  }
+  swim() {
+    console.log(`${this.name} is swimming`);
+    super.move();
+  }
 }
 
-class Snake extends Animal {
-  name = "ssssss";
+class Hawk extends Animal {
+  constructor(name, age, flySpeed) {
+    super(name, age);
+    this.flySpeed = flySpeed;
+  }
+  goFly() {
+    console.log(`${this.name} is flying very fast.`);
+    super.move();
+  }
 }
 
-const cat = new Cat();
-const dog = new Dog();
-const snake = new Snake();
+const rabbit = new Rabbit("honey bunny", 5, 12);
+const fish = new Fish("chak chak fish", 2, 14);
+const hawk = new Hawk("Fly Fly Hawk", 2, 14);
 
-console.log(cat.isAlive);
-dog.attack();
+rabbit.jump();
