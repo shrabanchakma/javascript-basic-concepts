@@ -867,52 +867,278 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // this = this object;
 // super = the parent;
 // super - can also be used to access parent class method inside of a child class method
-class Animal {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
+// class Animal {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
 
-  move(speed) {
-    console.log(`${this.name} moves at ${speed}mph`);
-  }
+//   move(speed) {
+//     console.log(`${this.name} moves at ${speed}mph`);
+//   }
+// }
+
+// class Rabbit extends Animal {
+//   constructor(name, age, runSpeed) {
+//     super(name, age);
+//     this.runSpeed = runSpeed;
+//   }
+//   jump() {
+//     console.log(`${this.name} is jumping`);
+//     super.move(25);
+//   }
+// }
+
+// class Fish extends Animal {
+//   constructor(name, age, swimSpeed) {
+//     super(name, age);
+//     this.swimSpeed = swimSpeed;
+//   }
+//   swim() {
+//     console.log(`${this.name} is swimming`);
+//     super.move();
+//   }
+// }
+
+// class Hawk extends Animal {
+//   constructor(name, age, flySpeed) {
+//     super(name, age);
+//     this.flySpeed = flySpeed;
+//   }
+//   goFly() {
+//     console.log(`${this.name} is flying very fast.`);
+//     super.move();
+//   }
+// }
+
+// const rabbit = new Rabbit("honey bunny", 5, 12);
+// const fish = new Fish("chak chak fish", 2, 14);
+// const hawk = new Hawk("Fly Fly Hawk", 2, 14);
+
+// rabbit.jump();
+
+// ==========================================================================VIDEO35
+
+// getter  -  special method that makes a property readable
+// setter - special method that makes a property writable
+
+// validate or modify a value while reading/writing a value
+
+// class Rectangle {
+//   constructor(width, height) {
+//     this.width = width;
+//     this.height = height;
+//   }
+
+//   set width(newWidth) {
+//     if (newWidth > 0) {
+//       this._width = newWidth;
+//     } else {
+//       console.error("somethings wrong with your input");
+//     }
+//   }
+
+//   set height(newHeight) {
+//     if (newHeight > 0) {
+//       this._height = newHeight;
+//     } else {
+//       console.error("somethings wrong with your input");
+//     }
+//   }
+
+//   get width() {
+//     return this._width;
+//   }
+
+//   get height() {
+//     return this._height;
+//   }
+
+//   get area() {
+//     return this._width * this._height;
+//   }
+// }
+
+// const rectangle = new Rectangle(7, 10);
+
+// console.log(rectangle.width);
+// console.log(rectangle.height);
+// console.log(rectangle.area);
+
+// class Person {
+//   constructor(firstName, lastName, age) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//   }
+
+//   set firstName(newFirstName) {
+//     if (typeof newFirstName === "string" && newFirstName.length > 0) {
+//       this._firstName = newFirstName;
+//     } else {
+//       console.error("First name has to be a non-empty string");
+//     }
+//   }
+//   set lastName(newLastName) {
+//     if (typeof newLastName === "string" && newLastName.length > 0) {
+//       this._lastName = newLastName;
+//     } else {
+//       console.error("Last name has to be a non-empty string");
+//     }
+//   }
+//   set age(newAge) {
+//     if (typeof newAge === "number" && newAge >= 0) {
+//       this._age = newAge;
+//     } else {
+//       console.error("Age must be non-negative number");
+//     }
+//   }
+
+//   get firstName() {
+//     return this._firstName;
+//   }
+
+//   get lastName() {
+//     return this._lastName;
+//   }
+//   get fullName() {
+//     return this._firstName + " " + this._lastName;
+//   }
+//   get age() {
+//     return this._age;
+//   }
+// }
+
+// const person = new Person("shraban", "chakma", 21);
+// console.log(person.firstName);
+// console.log(person.lastName);
+// console.log(person.fullName);
+// console.log(person.age);
+
+// ==========================================================================VIDEO36
+
+// destructuring - extract values from array and object and assign them to variables in a convenient way
+// [] = to perform array destructuring
+// {} = to perform object destructuring
+
+// Ex:1 swap two values
+// let a = 1;
+// let b = 2;
+
+// [a, b] = [b, a];
+
+// console.log(a, b);
+
+// Ex:2 swap two elements
+// const colors = ["red", "green", "blue", "white", "pink"];
+// [colors[0], colors[4]] = [colors[4], colors[0]];
+// console.log(colors);
+
+// const [firstColor, secondColor, thirdColor, ...extraColors] = colors;
+
+// console.log(firstColor);
+// console.log(secondColor);
+// console.log(thirdColor);
+// console.log(extraColors);
+
+// Ex:2 to extract values
+
+// const person1 = {
+//   firstName: "shraban",
+//   lastName: "chakma",
+//   age: 24,
+// };
+// const person2 = {
+//   firstName: "ritesh",
+//   lastName: "chakma",
+// };
+
+// const { firstName, lastName, age = "N/A" } = person2;
+
+// console.log(firstName);
+// console.log(lastName);
+// console.log(age);
+
+// Ex:3 Destructure in function parameter
+
+// function displayPerson({ firstName, lastName, age }) {
+//   console.log(`name: ${firstName} ${lastName}`);
+//   console.log(`He is ${age} years old`);
+// }
+
+// const person1 = {
+//   firstName: "shraban",
+//   lastName: "chakma",
+//   age: 24,
+// };
+// const person2 = {
+//   firstName: "ritesh",
+//   lastName: "chakma",
+// };
+
+// displayPerson(person1);
+// ==========================================================================VIDEO37
+// nested objects - Objects inside of other objects
+//                      allows you to represent more complex data structures
+//                          child object is inclosed by the parent object
+
+// const person = {
+//   name: "ritesh",
+//   age: 20,
+//   girlFriends: {
+//     g1: "antara",
+//     g2: "anika",
+//     g3: "banga",
+//   },
+// };
+
+// for (const property in person.girlFriends) {
+//   //   console.log(person.girlFriends[property]);
+//   console.log(property);
+// }
+
+// class Person {
+//   constructor(name, age, ...address) {
+//     this.name = name;
+//     this.age = age;
+//     this.address = new Address(...address);
+//   }
+// }
+
+// class Address {
+//   constructor(street, city, country) {
+//     this.street = street;
+//     this.city = city;
+//     this.country = country;
+//   }
+// }
+
+// const person1 = new Person("shraban", 21, "street-19", "uttara", "dhaka");
+
+// console.log(person1.address);
+
+// ==========================================================================VIDEO37
+
+// array of objects
+
+const fruits = [
+  {
+    name: "banana",
+    color: "yellow",
+    price: 10,
+  },
+  {
+    name: "apple",
+    color: "red",
+    price: 30,
+  },
+  {
+    name: "grapes",
+    color: "green",
+    price: 50,
+  },
+];
+
+for (const fruit of fruits) {
+  console.log(fruit.name);
 }
-
-class Rabbit extends Animal {
-  constructor(name, age, runSpeed) {
-    super(name, age);
-    this.runSpeed = runSpeed;
-  }
-  jump() {
-    console.log(`${this.name} is jumping`);
-    super.move(25);
-  }
-}
-
-class Fish extends Animal {
-  constructor(name, age, swimSpeed) {
-    super(name, age);
-    this.swimSpeed = swimSpeed;
-  }
-  swim() {
-    console.log(`${this.name} is swimming`);
-    super.move();
-  }
-}
-
-class Hawk extends Animal {
-  constructor(name, age, flySpeed) {
-    super(name, age);
-    this.flySpeed = flySpeed;
-  }
-  goFly() {
-    console.log(`${this.name} is flying very fast.`);
-    super.move();
-  }
-}
-
-const rabbit = new Rabbit("honey bunny", 5, 12);
-const fish = new Fish("chak chak fish", 2, 14);
-const hawk = new Hawk("Fly Fly Hawk", 2, 14);
-
-rabbit.jump();
