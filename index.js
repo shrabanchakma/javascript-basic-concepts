@@ -1165,3 +1165,23 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // console.log(minFruit);
 // console.log(totalPrice);
 // ==========================================================================VIDEO38
+// #sort() - method used to sort elements of an array in place
+// sorts elements as strings in lexicographic order, not alphabetical order
+
+// const numbers = [3, 6, 2, 1, 8, 5, 3, 3];
+
+// numbers.sort((a, b) => a - b);
+// numbers.sort((a, b) => b - a);
+
+// const people = [
+//   { name: "stuart", age: 29 },
+//   { name: "madMax", age: 15 },
+//   { name: "steven", age: 77 },
+//   { name: "jonny", age: 2 },
+// ];
+
+// people.sort((a, b) => a.age - b.age);
+// people.sort((a, b) => b.age - a.age);
+// people.sort((a, b) => a.name.localeCompare(b.name));
+
+// console.log(people);
