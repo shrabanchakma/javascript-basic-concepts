@@ -1185,3 +1185,37 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // people.sort((a, b) => a.name.localeCompare(b.name));
 
 // console.log(people);
+
+// ==========================================================================VIDEO39
+// Date() - objects that contains values that represent dates and times
+// these date objects can be changed and formatted
+
+// const date = new Date();
+// const year = date.getFullYear();
+// const month = date.getMonth();
+// const day = date.getDate();
+// const hour = date.getHours();
+// const minute = date.getMinutes();
+// const seconds = date.getSeconds();
+// const dayOfWeek = date.getDay();
+
+// const date = new Date();
+// const year = date.setFullYear();
+// const month = date.setMonth();
+// const day = date.setDate();
+// const hour = date.setHours();
+// const minute = date.setMinutes();
+// const seconds = date.setSeconds();
+// const dayOfWeek = date.setDay();
+// set parameters
+
+// console.log(date);
+// console.log(year);
+// console.log(month);
+// console.log(day);
+// console.log(hour);
+// console.log(minute);
+// console.log(seconds);
+// console.log(dayOfWeek);
+
+// ==========================================================================VIDEO40
