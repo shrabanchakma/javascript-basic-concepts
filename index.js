@@ -1121,24 +1121,47 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 
 // array of objects
 
-const fruits = [
-  {
-    name: "banana",
-    color: "yellow",
-    price: 10,
-  },
-  {
-    name: "apple",
-    color: "red",
-    price: 30,
-  },
-  {
-    name: "grapes",
-    color: "green",
-    price: 50,
-  },
-];
+// const fruits = [
+//   {
+//     name: "banana",
+//     color: "yellow",
+//     price: 10,
+//   },
+//   {
+//     name: "apple",
+//     color: "red",
+//     price: 30,
+//   },
+//   {
+//     name: "grapes",
+//     color: "green",
+//     price: 50,
+//   },
+// ];
 
-for (const fruit of fruits) {
-  console.log(fruit.name);
-}
+// #using for
+// for (const fruit of fruits) {
+//   console.log(fruit.name);
+// }
+
+// #using map()
+// const fruitNames = fruits.map((fruit) => fruit.name);
+// console.log(fruitNames);
+
+// #using filter()
+// const budgetFruits = fruits.filter((fruit) => fruit.price <= 30);
+// console.log(budgetFruits);
+
+// #using reduce()
+// const maxFruit = fruits.reduce((max, fruit) =>
+//   fruit.price > max.price ? fruit : max
+// );
+// const minFruit = fruits.reduce((min, fruit) =>
+//   fruit.price < min.price ? fruit : min
+// );
+// const totalPrice = fruits.reduce((total, fruit) => fruit.price + total, 0);
+
+// console.log(maxFruit);
+// console.log(minFruit);
+// console.log(totalPrice);
+// ==========================================================================VIDEO38
