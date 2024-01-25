@@ -1242,27 +1242,53 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // counter.increment();
 // console.log(`the current count is: ${counter.getCount()}`);
 
-function createGame() {
-  let score = 0;
+// function createGame() {
+//   let score = 0;
 
-  function increaseScore(points) {
-    score += points;
-    console.log(`+${points}pts`);
-  }
-  function decreaseScore(points) {
-    score -= points;
-    console.log(`-${points}pts`);
-  }
-  function getScore() {
-    return score;
-  }
+//   function increaseScore(points) {
+//     score += points;
+//     console.log(`+${points}pts`);
+//   }
+//   function decreaseScore(points) {
+//     score -= points;
+//     console.log(`-${points}pts`);
+//   }
+//   function getScore() {
+//     return score;
+//   }
 
-  return { increaseScore, decreaseScore, getScore };
+//   return { increaseScore, decreaseScore, getScore };
+// }
+
+// const game = createGame();
+
+// game.increaseScore(5);
+// game.increaseScore(5);
+// game.decreaseScore(3);
+// console.log(`current score is ${game.getScore()}`);
+
+// ==========================================================================VIDEO41
+// #setTimeOut(callback, time_in_milliseconds) function in javascript that allows you to schedule the execution of a function after an amount of time (milliseconds)
+
+// #clearTimeOut(timeOutId) = can cancel a timeout before it triggers
+
+// function display() {
+//   window.alert(`Hello World`);
+// }
+
+// setTimeout(display, 3000);
+
+// setTimeout(function () {
+//   window.alert("alerting you with anonymous function");
+// }, 5000);
+
+// setTimeout(() => window.alert("alerting you with arrow function"), 2000);
+
+let timeoutId;
+function startTimer() {
+  timeoutId = setTimeout(() => window.alert("Hello Bangla"), 3000);
 }
 
-const game = createGame();
-
-game.increaseScore(5);
-game.increaseScore(5);
-game.decreaseScore(3);
-console.log(`current score is ${game.getScore()}`);
+function clearTimer() {
+  clearTimeout(timeoutId);
+}
