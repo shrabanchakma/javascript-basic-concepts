@@ -1284,11 +1284,28 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 
 // setTimeout(() => window.alert("alerting you with arrow function"), 2000);
 
-let timeoutId;
-function startTimer() {
-  timeoutId = setTimeout(() => window.alert("Hello Bangla"), 3000);
+// let timeoutId;
+// function startTimer() {
+//   timeoutId = setTimeout(() => window.alert("Hello Bangla"), 3000);
+// }
+
+// function clearTimer() {
+//   clearTimeout(timeoutId);
+// }
+
+// ==========================================================================VIDEO42
+function updateClock() {
+  const now = new Date();
+  let hours = now.getHours();
+  const meridiem = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12 || 12;
+  hours = hours.toString().padStart(2, 0);
+  const minutes = now.getMinutes().toString().padStart(2, 0);
+  const seconds = now.getSeconds().toString().padStart(2, 0);
+  const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
+  console.log(timeString);
+  document.querySelector(".clock").textContent = timeString;
 }
 
-function clearTimer() {
-  clearTimeout(timeoutId);
-}
+updateClock();
+setInterval(updateClock, 1000);

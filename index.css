@@ -1,52 +1,26 @@
 body {
-  font-family: Verdana;
-  text-align: center;
-  background-color: hsl(0, 0%, 95%);
+  background-image: url(images/clockBgImg.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
 }
 
-h1 {
-  color: hsl(240, 78%, 53%);
+.clock-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#conversionForm {
-  max-width: 50%;
-  margin: auto;
-  background-color: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 5px 5px 15px hsla(0, 0%, 0%, 0.164);
-}
-
-#textBox {
-  width: 50%;
-  text-align: center;
-  font-size: 2em;
-  border: 2px solid hsla(0, 0%, 0%, 0.562);
-  border-radius: 5px;
-  margin-bottom: 5px;
-}
-
-label {
-  font-size: 1.5em;
+.clock {
+  font-family: monospace;
+  font-size: 6.5rem;
   font-weight: bold;
-}
-
-button {
-  background-color: hsl(0, 100%, 60%);
-  border: none;
-  font-size: 1.5em;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 15px 0px;
+  text-align: center;
   color: white;
-}
-
-button:hover {
-  background-color: hsl(0, 100%, 50%);
-}
-
-#result {
-  font-size: 1.5rem;
-  font-weight: bold;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  background-color: hsla(0, 0%, 100%, 0.137);
 }
