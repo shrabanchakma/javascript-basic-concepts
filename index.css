@@ -1,26 +1,42 @@
 body {
-  background-image: url(images/clockBgImg.jpeg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  margin: 0;
-}
-
-.clock-container {
-  height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  background-color: hsla(0, 0%, 50%, 0.13);
 }
 
-.clock {
+#myH1 {
+  font-size: 4rem;
+  font-family: "Arial", sans-serif;
+  color: rgb(66, 57, 57);
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border: 5px solid;
+  border-radius: 50px;
+  background-color: white;
+}
+
+#display {
+  font-size: 5rem;
   font-family: monospace;
-  font-size: 6.5rem;
   font-weight: bold;
-  text-align: center;
+  color: hsla(0, 1%, 18%, 0.664);
+  text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.315);
+  margin-bottom: 25px;
+}
+
+#controls button {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
   color: white;
-  backdrop-filter: blur(5px);
-  width: 100%;
-  background-color: hsla(0, 0%, 100%, 0.137);
+  min-width: 125px;
+  font-weight: bold;
 }

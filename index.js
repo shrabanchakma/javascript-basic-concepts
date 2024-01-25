@@ -1294,18 +1294,57 @@ document.getElementById("p3").textContent = `Am i a student? ${isStudent}`;*/
 // }
 
 // ==========================================================================VIDEO42
-function updateClock() {
-  const now = new Date();
-  let hours = now.getHours();
-  const meridiem = hours >= 12 ? "PM" : "AM";
-  hours = hours % 12 || 12;
-  hours = hours.toString().padStart(2, 0);
-  const minutes = now.getMinutes().toString().padStart(2, 0);
-  const seconds = now.getSeconds().toString().padStart(2, 0);
-  const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
-  console.log(timeString);
-  document.querySelector(".clock").textContent = timeString;
+// (project 2)-world clock
+/*
+-------------html
+   <div class="clock-container">
+      <div class="clock">00:00:00</div>
+    </div>
+-------------css'
+body {
+  background-image: url(images/clockBgImg.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
 }
 
-updateClock();
-setInterval(updateClock, 1000);
+.clock-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  font-family: monospace;
+  font-size: 6.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  background-color: hsla(0, 0%, 100%, 0.137);
+}
+
+*/
+
+// function updateClock() {
+//   const now = new Date();
+//   let hours = now.getHours();
+//   const meridiem = hours >= 12 ? "PM" : "AM";
+//   hours = hours % 12 || 12;
+//   hours = hours.toString().padStart(2, 0);
+//   const minutes = now.getMinutes().toString().padStart(2, 0);
+//   const seconds = now.getSeconds().toString().padStart(2, 0);
+//   const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
+//   console.log(timeString);
+//   document.querySelector(".clock").textContent = timeString;
+// }
+
+// updateClock();
+// setInterval(updateClock, 1000);
+
+// ==========================================================================VIDEO43
+// project(3)-stop watch
