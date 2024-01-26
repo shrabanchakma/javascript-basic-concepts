@@ -1349,47 +1349,139 @@ body {
 // ==========================================================================VIDEO43
 // project(3)-stop watch
 
+// #html
+/*
+ <h1 id="myH1">StopWatch</h1>
+    <div id="container">
+      <div id="display">00:00:00:00</div>
+      <div id="controls">
+        <button id="startBtn" onclick="start()">start</button>
+        <button id="stopBtn" onclick="stop()">stop</button>
+        <button id="resetBtn" onclick="reset()">reset</button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+*/
+
+// #css
+
+/*
+ body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsla(0, 0%, 50%, 0.13);
+}
+
+#myH1 {
+  font-size: 4rem;
+  font-family: "Arial", sans-serif;
+  color: rgb(66, 57, 57);
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border: 5px solid;
+  border-radius: 50px;
+  background-color: white;
+}
+
+#display {
+  font-size: 5rem;
+  font-family: monospace;
+  font-weight: bold;
+  color: hsla(0, 1%, 18%, 0.664);
+  text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.315);
+  margin-bottom: 25px;
+}
+
+#controls button {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  min-width: 125px;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+}
+
+#startBtn {
+  background-color: hsl(115, 100%, 40%);
+}
+#startBtn:hover {
+  background-color: hsl(115, 100%, 30%);
+}
+#stopBtn {
+  background-color: hsl(10, 90%, 50%);
+}
+#stopBtn:hover {
+  background-color: hsl(10, 90%, 40%);
+}
+#resetBtn {
+  background-color: hsl(205, 90%, 60%);
+}
+#resetBtn:hover {
+  background-color: hsl(205, 90%, 30%);
+}
+
+*/
+
 // #javascript
 
-const display = document.getElementById("display");
-let timer = null;
-let startTime = 0;
-let elapsedTime = 0;
-let isRunning = false;
+// const display = document.getElementById("display");
+// let timer = null;
+// let startTime = 0;
+// let elapsedTime = 0;
+// let isRunning = false;
 
-function start() {
-  if (!isRunning) {
-    startTime = Date.now() - elapsedTime;
-    timer = setInterval(update, 10);
-    isRunning = true;
-  }
-}
-function stop() {
-  clearInterval(timer);
-  elapsedTime = Date.now() - startTime;
-  isRunning = false;
-}
-function reset() {
-  clearInterval(timer);
-  startTime = 0;
-  elapsedTime = 0;
-  isRunning = false;
-  display.textContent = "00:00:00:00";
-}
-function update() {
-  const currentTime = Date.now();
-  elapsedTime = currentTime - startTime;
-  let hours = Math.floor(elapsedTime / (1000 * 60 * 60))
-    .toString()
-    .padStart(2, 0);
-  let minutes = Math.floor((elapsedTime / (1000 * 60)) % 60)
-    .toString()
-    .padStart(2, 0);
-  let seconds = Math.floor((elapsedTime / 1000) % 60)
-    .toString()
-    .padStart(2, 0);
-  let milliseconds = Math.floor((elapsedTime % 1000) / 10)
-    .toString()
-    .padStart(2, 0);
-  display.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
-}
+// function start() {
+//   if (!isRunning) {
+//     startTime = Date.now() - elapsedTime;
+//     timer = setInterval(update, 10);
+//     isRunning = true;
+//   }
+// }
+// function stop() {
+//   clearInterval(timer);
+//   elapsedTime = Date.now() - startTime;
+//   isRunning = false;
+// }
+// function reset() {
+//   clearInterval(timer);
+//   startTime = 0;
+//   elapsedTime = 0;
+//   isRunning = false;
+//   display.textContent = "00:00:00:00";
+// }
+// function update() {
+//   const currentTime = Date.now();
+//   elapsedTime = currentTime - startTime;
+//   let hours = Math.floor(elapsedTime / (1000 * 60 * 60))
+//     .toString()
+//     .padStart(2, 0);
+//   let minutes = Math.floor((elapsedTime / (1000 * 60)) % 60)
+//     .toString()
+//     .padStart(2, 0);
+//   let seconds = Math.floor((elapsedTime / 1000) % 60)
+//     .toString()
+//     .padStart(2, 0);
+//   let milliseconds = Math.floor((elapsedTime % 1000) / 10)
+//     .toString()
+//     .padStart(2, 0);
+//   display.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+// }
+
+// ==========================================================================VIDEO44
+
+import { PI, getCircumference, getArea } from "./mathUtils.js";
+
+console.log(PI);
+const circumference = getCircumference(10).toFixed(2);
+const area = getArea(10).toFixed(2);
+console.log(circumference);
+console.log(area);
