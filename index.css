@@ -39,6 +39,7 @@ body {
   color: white;
   min-width: 125px;
   font-weight: bold;
+  transition: background-color 0.5s ease;
 }
 
 #startBtn {
