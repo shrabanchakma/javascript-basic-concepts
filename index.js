@@ -1477,11 +1477,42 @@ body {
 // }
 
 // ==========================================================================VIDEO44
+// Es6 - An external file that contains reusable code
+// that can be imported into other javascript files
+// can contain variables, classes, functions.... and more
+// Introduced as part of ECMAScript 2015 update
+// import { PI, getCircumference, getArea } from "./mathUtils.js";
 
-import { PI, getCircumference, getArea } from "./mathUtils.js";
+// console.log(PI);
+// const circumference = getCircumference(10).toFixed(2);
+// const area = getArea(10).toFixed(2);
+// console.log(circumference);
+// console.log(area);
+// ==========================================================================VIDEO45
+//  synchronous and asynchronous
+// ==========================================================================VIDEO46
 
-console.log(PI);
-const circumference = getCircumference(10).toFixed(2);
-const area = getArea(10).toFixed(2);
-console.log(circumference);
-console.log(area);
+// Error = An object to represent the problems
+
+// throw new Error("wow this is new error! do you like it??");
+
+// try {} = encloses codes that might potentially cause errors
+// catch{} = catches and handles any thrown error from try {}
+// finally{} = Always executes.Used mostly for cleanup
+//              ex.closing files, close connection and release resources
+
+// try {
+//   console.log("hi");
+// } catch (error) {
+//   console.error(error);
+//   // network error
+//   // promise rejection
+//   // security error
+// } finally {
+//   // close files
+//   // close connection
+//   // release resources
+//   console.log("finally executing");
+// }
+
+// console.log("reatched the end");
