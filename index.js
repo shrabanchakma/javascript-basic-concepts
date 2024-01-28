@@ -1564,3 +1564,26 @@ they allow you to select one or multiple elements for the dom
 // );
 
 // document.querySelector(".fruits").style.backgroundColor = "blue";
+
+// ==========================================================================VIDEO50
+
+/*
+  DOM Navigation = the process of navigating through the structure of an html document using javascript
+
+
+  .firstElementChild
+  .lastElementChild
+  .nextElementSibling
+  .previousElementSibling
+  .parentElement
+  .children
+*/
+// let elements = document.getElementsByTagName("ul");
+
+// for (let element of elements) {
+//   element.firstElementChild.style.backgroundColor = "blue";
+// }
+
+// for (let element of elements) {
+//   element.lastElementChild.style.backgroundColor = "yellow";
+// }
