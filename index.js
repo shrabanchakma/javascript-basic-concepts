@@ -1516,3 +1516,51 @@ body {
 // }
 
 // console.log("reatched the end");
+// ==========================================================================VIDEO47
+// (project 3)
+// calculator
+// ==========================================================================VIDEO48
+/*
+  DOM = Document Object Model
+        Object{} represents the page you see in the web browser
+        and provides you with api that interacts with it.
+        Web browser constructs the dom when it loads an html document,
+        and structures all the elements in a tree like representation,
+        Javascript can access the dom to dynamically access the content, structure and style of a web page
+
+*/
+
+// ==========================================================================VIDEO49
+
+/*
+element selectors = Methods used to target and manipulate html elements 
+they allow you to select one or multiple elements for the dom
+
+1.getElementById()  //element or null
+2.getElementsByClassName // html collection 
+3.getElementsByTagName  //html collection
+4.querySelector //first matching or null
+5.querySelectorAll //nodelist
+*/
+
+// const fruits = document.getElementsByClassName("fruits");
+// console.log(fruits);
+// for (let fruit of fruits) {
+//   fruit.style.backgroundColor = "yellow";
+// }
+
+// Array.from(fruits).forEach((fruit) => (fruit.style.backgroundColor = "blue"));
+
+// const myLists = document.getElementsByTagName("li");
+// const h4Elements = document.getElementsByTagName("h4");
+// console.log(myLists);
+// for(let item of myLists){
+//   item.style.backgroundColor = "lightgreen";
+// }
+
+// Array.from(myLists).forEach((item) => (item.style.background = "lightgreen"));
+// Array.from(h4Elements).forEach(
+//   (heading) => (heading.style.backgroundColor = "yellow")
+// );
+
+// document.querySelector(".fruits").style.backgroundColor = "blue";
