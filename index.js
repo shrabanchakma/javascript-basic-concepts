@@ -1619,6 +1619,7 @@ they allow you to select one or multiple elements for the dom
 // ==========================================================================VIDEO52
 /*
   event listeners = listen to specific events to create interactive web pages
+  events = mouseover, click, mouseout
 */
 // const myBox = document.getElementById("myBox");
 
@@ -1636,3 +1637,44 @@ they allow you to select one or multiple elements for the dom
 //   event.target.style.backgroundColor = "lightgreen";
 //   event.target.textContent = "Click Me 👙";
 // });
+
+// ==========================================================================VIDEO53
+// events = keydown, keyup
+
+const myBox = document.getElementById("myBox");
+
+document.addEventListener("keydown", (Event) => {
+  myBox.textContent = "🎇";
+  myBox.style.backgroundColor = "red";
+});
+document.addEventListener("keyup", (Event) => {
+  myBox.textContent = "👈";
+  myBox.style.backgroundColor = "lightblue";
+});
+let movementAmount = 100;
+let x = 0;
+let y = 0;
+
+document.addEventListener("keydown", (e) => {
+  if (e.key.includes("Arrow")) {
+    switch (e.key) {
+      case "ArrowUp":
+        y -= movementAmount;
+        break;
+      case "ArrowDown":
+        y += movementAmount;
+        break;
+      case "ArrowLeft":
+        x -= movementAmount;
+        break;
+      case "ArrowRight":
+        x += movementAmount;
+        break;
+      default:
+        break;
+    }
+
+    myBox.style.top = `${y}px`;
+    myBox.style.left = `${x}px`;
+  }
+});
