@@ -1587,3 +1587,52 @@ they allow you to select one or multiple elements for the dom
 // for (let element of elements) {
 //   element.lastElementChild.style.backgroundColor = "yellow";
 // }
+
+// ==========================================================================VIDEO51
+// const newH1 = document.createElement("h1");
+
+// newH1.textContent = "I like bananas";
+// newH1.id = "myH1";
+// newH1.style.color = "tomato";
+// newH1.style.textAlign = "center";
+// document.body.append(newH1);
+// document.body.prepend(newH1);
+// document.getElementById("box1").append(newH1);
+// document.getElementById("box1").prepend(newH1);
+// const box3 = document.getElementById("box3");
+// document.body.insertBefore(newH1, box2);
+
+// const myList = document.querySelectorAll(".box");
+// document.body.insertBefore(newH1, myList[2]);
+// document.body.removeChild(myH1);
+// const newListElement = document.createElement("li");
+// newListElement.textContent = "coconut";
+// newListElement.style.fontSize = "2rem";
+// newListElement.style.backgroundColor = "lightgreen";
+// document.getElementById("fruits").prepend(newListElement);
+// const banana = document.getElementById("apple");
+// document.getElementById("fruits").insertBefore(newListElement, banana);
+
+// const fruitList = document.querySelectorAll("#fruits li");
+// document.getElementById("fruits").insertBefore(newListElement, fruitList[1]);
+
+// ==========================================================================VIDEO52
+/*
+  event listeners = listen to specific events to create interactive web pages
+*/
+// const myBox = document.getElementById("myBox");
+
+// myBox.addEventListener("click", (event) => {
+//   event.target.style.backgroundColor = "tomato";
+//   event.target.style.color = "white";
+//   event.target.textContent = "that hurts daddy";
+// });
+// myBox.addEventListener("mouseover", (event) => {
+//   event.target.style.backgroundColor = "tomato";
+//   event.target.style.color = "white";
+//   event.target.textContent = "oma oma ga";
+// });
+// myBox.addEventListener("mouseout", (event) => {
+//   event.target.style.backgroundColor = "lightgreen";
+//   event.target.textContent = "Click Me 👙";
+// });
