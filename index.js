@@ -1694,8 +1694,8 @@ they allow you to select one or multiple elements for the dom
 // });
 
 // ==========================================================================VIDEO55
-
-let myButtons = document.querySelectorAll("#myBtns");
+// ##Topic nodelist
+// let myButtons = document.querySelectorAll("#myBtns");
 // console.log(myButtons);
 // myButtons.forEach((button) => {
 //   button.style.backgroundColor = "blue";
@@ -1726,10 +1726,59 @@ let myButtons = document.querySelectorAll("#myBtns");
 // document.body.appendChild(newButton);
 // console.log(myButtons);
 
+// myButtons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     event.target.remove();
+//     myButtons = document.querySelectorAll("#myBtns");
+//     console.log(myButtons);
+//   });
+// });
+
+// ==========================================================================VIDEO56
+// ##topic = classList
+/*
+  classList = Element property is used to interact with an elements list of classes  
+  Allows you to make reusable classes for many elements across your webpage
+*/
+// const myButton = document.getElementById("myBtn");
+// myButton.addEventListener("click", () => {
+//   myButton.classList.add("enabled");
+//   myButton.textContent = "Clicked";
+// });
+
+// myButton.addEventListener("mouseover", () => {
+//   myButton.classList.add("hover");
+// });
+// myButton.addEventListener("mouseout", () => {
+//   myButton.classList.remove("hover");
+// });
+// myButton.classList.add("enabled");
+// myButton.addEventListener("click", (event) => {
+//   if (event.target.classList.contains("disabled")) {
+//     event.target.classList.replace("disabled", "enabled");
+//   } else {
+//     event.target.classList.replace("enabled", "disabled");
+//   }
+// });
+
+const myButtons = document.querySelectorAll(".myButtons");
+
+myButtons.forEach((button) => {
+  button.classList.add("enabled");
+});
+
+myButtons.forEach((button) => {
+  button.addEventListener("mouseover", (event) => {
+    event.target.classList.toggle("hover");
+  });
+});
+
 myButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
-    event.target.remove();
-    myButtons = document.querySelectorAll("#myBtns");
-    console.log(myButtons);
+    if (event.target.classList.contains("disabled")) {
+      event.target.textContent = "Already Disabled Bro";
+    } else {
+      event.target.classList.add("disabled");
+    }
   });
 });

@@ -1,9 +1,21 @@
-#myBtns {
-  font-size: 6rem;
-  background-color: hsl(268, 51%, 50%);
-  color: white;
+.myButtons {
+  font-size: 4rem;
   border: none;
   border-radius: 15px;
   margin: 0 10px 10px 0;
   padding: 10px;
+}
+
+.enabled {
+  background-color: hsl(204, 100%, 50%);
+  color: white;
+}
+.hover {
+  background-color: hsl(204, 100%, 50%);
+  color: white;
+  box-shadow: 2px 2px 10px 0px black;
+}
+.disabled {
+  background-color: hsl(0, 0%, 60%);
+  color: hsl(0, 0%, 90%);
 }
