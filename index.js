@@ -1784,9 +1784,83 @@ they allow you to select one or multiple elements for the dom
 // });
 
 // ==========================================================================VIDEO57
-// (project 5)
+// (project 5) rock-paper-scissors game
+/*
 
-const choices = ["rock", "paper", "scissors"];
+HTML :  <body>
+    <h1>Rock - Paper - Scissors</h1>
+    <div class="choices">
+      <button onclick="playGame('rock')">👊</button>
+      <button onclick="playGame('paper')">✋</button>
+      <button onclick="playGame('scissors')">✌️</button>
+    </div>
+    <div id="playerDisplay">PLAYER:</div>
+    <div id="computerDisplay">computer:</div>
+    <div id="resultDisplay">IT'S A TIE</div>
+    <div id="playerScore">
+      Players Score: <span id="playerScoreDisplay">0</span>
+    </div>
+    <div id="computerScore">
+      Computer Score: <span id="computerScoreDisplay">0</span>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+
+CSS: body {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+.choices {
+  margin-bottom: 50px;
+}
+
+.choices button {
+  font-size: 10rem;
+  min-width: 200px;
+  border-radius: 200px;
+  border: none;
+  background-color: hsl(200, 100%, 50%);
+  transition: background-color 0.5s ease;
+}
+
+.choices button:hover {
+  background-color: hsl(200, 100%, 70%);
+}
+
+#playerDisplay,
+#computerDisplay {
+  font-size: 2.5rem;
+}
+#resultDisplay {
+  font-size: 6rem;
+  margin: 30px 0;
+}
+
+#playerScore,
+#computerScore {
+  font-size: 2rem;
+}
+
+.greenText,
+#playerScoreDisplay {
+  color: hsl(130, 84%, 54%);
+}
+.redText,
+#computerScoreDisplay {
+  color: hsl(0, 84%, 60%);
+}
+
+
+JAVASCRIPT:  const choices = ["rock", "paper", "scissors"];
 const playerResult = document.getElementById("playerDisplay");
 const computerResult = document.getElementById("computerDisplay");
 const gameResult = document.getElementById("resultDisplay");
@@ -1830,4 +1904,44 @@ function playGame(playersChoice) {
       computerScoreDisplay.textContent = computerScore;
       break;
   }
+}
+
+*/
+
+// ==========================================================================VIDEO58
+// #project 5 image slider
+
+const slides = document.querySelectorAll(".slider img");
+let slideIdx = 0;
+let intervalId = null;
+
+document.addEventListener("DOMContentLoaded", initializeSlider());
+
+function initializeSlider() {
+  if (slides.length > 0) {
+    slides[slideIdx].classList.add("displaySlide");
+    intervalId = setInterval(nextSlide, 5000);
+  }
+}
+
+function showSlide(idx) {
+  if (idx >= slides.length) {
+    slideIdx = 0;
+  } else if (idx < 0) {
+    slideIdx = slides.length - 1;
+  }
+  slides.forEach((slide) => {
+    slide.classList.remove("displaySlide");
+  });
+  slides[slideIdx].classList.add("displaySlide");
+}
+function prevSlide() {
+  clearInterval(intervalId);
+  slideIdx--;
+  showSlide(slideIdx);
+}
+
+function nextSlide() {
+  slideIdx++;
+  showSlide(slideIdx);
 }
