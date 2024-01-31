@@ -1517,7 +1517,7 @@ body {
 
 // console.log("reatched the end");
 // ==========================================================================VIDEO47
-// (project 3)
+// (project 4)
 // calculator
 // ==========================================================================VIDEO48
 /*
@@ -1761,24 +1761,73 @@ they allow you to select one or multiple elements for the dom
 //   }
 // });
 
-const myButtons = document.querySelectorAll(".myButtons");
+// const myButtons = document.querySelectorAll(".myButtons");
 
-myButtons.forEach((button) => {
-  button.classList.add("enabled");
-});
+// myButtons.forEach((button) => {
+//   button.classList.add("enabled");
+// });
 
-myButtons.forEach((button) => {
-  button.addEventListener("mouseover", (event) => {
-    event.target.classList.toggle("hover");
-  });
-});
+// myButtons.forEach((button) => {
+//   button.addEventListener("mouseover", (event) => {
+//     event.target.classList.toggle("hover");
+//   });
+// });
 
-myButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    if (event.target.classList.contains("disabled")) {
-      event.target.textContent = "Already Disabled Bro";
-    } else {
-      event.target.classList.add("disabled");
+// myButtons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     if (event.target.classList.contains("disabled")) {
+//       event.target.textContent = "Already Disabled Bro";
+//     } else {
+//       event.target.classList.add("disabled");
+//     }
+//   });
+// });
+
+// ==========================================================================VIDEO57
+// (project 5)
+
+const choices = ["rock", "paper", "scissors"];
+const playerResult = document.getElementById("playerDisplay");
+const computerResult = document.getElementById("computerDisplay");
+const gameResult = document.getElementById("resultDisplay");
+const playerScoreDisplay = document.getElementById("playerScoreDisplay");
+const computerScoreDisplay = document.getElementById("computerScoreDisplay");
+let playerScore = 0;
+let computerScore = 0;
+function playGame(playersChoice) {
+  const computersChoice = choices[Math.floor(Math.random() * 3)];
+  let result = "";
+  if (playersChoice === computersChoice) {
+    result = "IT'S A TIE";
+  } else {
+    switch (playersChoice) {
+      case "rock":
+        result = computersChoice === "scissors" ? "You Win" : "You Lose";
+        break;
+      case "scissors":
+        result = computersChoice === "paper" ? "You Win" : "You Lose";
+        break;
+      case "paper":
+        result = computersChoice === "rock" ? "You Win" : "You Lose";
+        break;
     }
-  });
-});
+  }
+
+  playerResult.textContent = `PLAYER: ${playersChoice}`;
+  computerResult.textContent = `COMPUTER: ${computersChoice}`;
+  gameResult.textContent = result;
+  gameResult.classList.remove("greenText", "redText");
+
+  switch (result) {
+    case "You Win":
+      gameResult.classList.add("greenText");
+      playerScore++;
+      playerScoreDisplay.textContent = playerScore;
+      break;
+    case "You Lose":
+      gameResult.classList.add("redText");
+      computerScore++;
+      computerScoreDisplay.textContent = computerScore;
+      break;
+  }
+}
