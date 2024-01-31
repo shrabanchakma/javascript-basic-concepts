@@ -1641,40 +1641,54 @@ they allow you to select one or multiple elements for the dom
 // ==========================================================================VIDEO53
 // events = keydown, keyup
 
-const myBox = document.getElementById("myBox");
+// const myBox = document.getElementById("myBox");
 
-document.addEventListener("keydown", (Event) => {
-  myBox.textContent = "🎇";
-  myBox.style.backgroundColor = "red";
-});
-document.addEventListener("keyup", (Event) => {
-  myBox.textContent = "👈";
-  myBox.style.backgroundColor = "lightblue";
-});
-let movementAmount = 100;
-let x = 0;
-let y = 0;
+// document.addEventListener("keydown", (Event) => {
+//   myBox.textContent = "🎇";
+//   myBox.style.backgroundColor = "red";
+// });
+// document.addEventListener("keyup", (Event) => {
+//   myBox.textContent = "👈";
+//   myBox.style.backgroundColor = "lightblue";
+// });
+// let movementAmount = 100;
+// let x = 0;
+// let y = 0;
 
-document.addEventListener("keydown", (e) => {
-  if (e.key.includes("Arrow")) {
-    switch (e.key) {
-      case "ArrowUp":
-        y -= movementAmount;
-        break;
-      case "ArrowDown":
-        y += movementAmount;
-        break;
-      case "ArrowLeft":
-        x -= movementAmount;
-        break;
-      case "ArrowRight":
-        x += movementAmount;
-        break;
-      default:
-        break;
-    }
+// document.addEventListener("keydown", (e) => {
+//   if (e.key.includes("Arrow")) {
+//     switch (e.key) {
+//       case "ArrowUp":
+//         y -= movementAmount;
+//         break;
+//       case "ArrowDown":
+//         y += movementAmount;
+//         break;
+//       case "ArrowLeft":
+//         x -= movementAmount;
+//         break;
+//       case "ArrowRight":
+//         x += movementAmount;
+//         break;
+//       default:
+//         break;
+//     }
 
-    myBox.style.top = `${y}px`;
-    myBox.style.left = `${x}px`;
+//     myBox.style.top = `${y}px`;
+//     myBox.style.left = `${x}px`;
+//   }
+// });
+
+// ==========================================================================VIDEO54
+const myImg = document.getElementById("myImg");
+const myBtn = document.getElementById("myBtn");
+
+myBtn.addEventListener("click", () => {
+  if (myImg.style.visibility === "hidden") {
+    myImg.style.visibility = "visible";
+    myBtn.textContent = "show";
+  } else {
+    myImg.style.visibility = "hidden";
+    myBtn.textContent = "show";
   }
 });
