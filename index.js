@@ -1680,15 +1680,56 @@ they allow you to select one or multiple elements for the dom
 // });
 
 // ==========================================================================VIDEO54
-const myImg = document.getElementById("myImg");
-const myBtn = document.getElementById("myBtn");
+// const myImg = document.getElementById("myImg");
+// const myBtn = document.getElementById("myBtn");
 
-myBtn.addEventListener("click", () => {
-  if (myImg.style.visibility === "hidden") {
-    myImg.style.visibility = "visible";
-    myBtn.textContent = "show";
-  } else {
-    myImg.style.visibility = "hidden";
-    myBtn.textContent = "show";
-  }
+// myBtn.addEventListener("click", () => {
+//   if (myImg.style.visibility === "hidden") {
+//     myImg.style.visibility = "visible";
+//     myBtn.textContent = "show";
+//   } else {
+//     myImg.style.visibility = "hidden";
+//     myBtn.textContent = "show";
+//   }
+// });
+
+// ==========================================================================VIDEO55
+
+let myButtons = document.querySelectorAll("#myBtns");
+// console.log(myButtons);
+// myButtons.forEach((button) => {
+//   button.style.backgroundColor = "blue";
+//   button.textContent += "wow";
+// });
+
+// myButtons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     event.target.style.backgroundColor = "tomato";
+//   });
+// });
+
+// myButtons.forEach((button) => {
+//   button.addEventListener("mouseover", (event) => {
+//     event.target.style.backgroundColor = "hsl(268, 51%, 30%)";
+//   });
+// });
+// myButtons.forEach((button) => {
+//   button.addEventListener("mouseout", (event) => {
+//     event.target.style.backgroundColor = "hsl(268, 51%, 50%)";
+//   });
+// });
+
+// const newButton = document.createElement("button");
+// newButton.textContent = "button 5";
+// newButton.id = "myBtns";
+// console.log(newButton);
+// document.body.appendChild(newButton);
+// console.log(myButtons);
+
+myButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.target.remove();
+    myButtons = document.querySelectorAll("#myBtns");
+    console.log(myButtons);
+  });
 });
