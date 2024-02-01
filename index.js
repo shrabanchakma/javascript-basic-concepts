@@ -1910,38 +1910,88 @@ function playGame(playersChoice) {
 
 // ==========================================================================VIDEO58
 // #project 5 image slider
+// ==========================================================================VIDEO59
+/*
+ Callback hell = situation in javascript where callbacks are nested in other callbacks to such a degree that 
+ the code becomes difficult to read;
+ Old patterns to handle asynchronous functions
+ Use Promises + async/await to avoid callback hell
+*/
 
-const slides = document.querySelectorAll(".slider img");
-let slideIdx = 0;
-let intervalId = null;
+// function task1(callBack) {
+//   setTimeout(() => {
+//     console.log("complete task 1");
+//     callBack();
+//   }, 3000);
+// }
+// function task2(callBack) {
+//   setTimeout(() => {
+//     console.log("complete task 2");
+//     callBack();
+//   }, 1000);
+// }
+// function task3(callBack) {
+//   setTimeout(() => {
+//     console.log("complete task 3");
+//     callBack();
+//   }, 1500);
+// }
 
-document.addEventListener("DOMContentLoaded", initializeSlider());
+// task1(() => {
+//   task2(() => {
+//     task3(() => {
+//       console.log("all task complete");
+//     });
+//   });
+// });
 
-function initializeSlider() {
-  if (slides.length > 0) {
-    slides[slideIdx].classList.add("displaySlide");
-    intervalId = setInterval(nextSlide, 5000);
-  }
-}
+// asynchronous operations take indeterminate amount of time
+// ==========================================================================VIDEO60
 
-function showSlide(idx) {
-  if (idx >= slides.length) {
-    slideIdx = 0;
-  } else if (idx < 0) {
-    slideIdx = slides.length - 1;
-  }
-  slides.forEach((slide) => {
-    slide.classList.remove("displaySlide");
+/*
+  promise = an object that manages asynchronous operations
+  wrap a promise object around {asynchronous code}
+  "I promise to return a value"
+  PENDING -> RESOLVED or REJECTED
+  new Promise ((resolve, reject) => {asynchronous code})
+*/
+function walkDog() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const dogWalked = true;
+      if (dogWalked) {
+        resolve("You Walked the dog");
+      } else {
+        reject("you did not walked the dog");
+      }
+    }, 3000);
   });
-  slides[slideIdx].classList.add("displaySlide");
 }
-function prevSlide() {
-  clearInterval(intervalId);
-  slideIdx--;
-  showSlide(slideIdx);
+function cleanKitchen() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("You cleaned the kitchen");
+    }, 1500);
+  });
+}
+function takeOutTrash() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("You took out the trash");
+    });
+  });
 }
 
-function nextSlide() {
-  slideIdx++;
-  showSlide(slideIdx);
-}
+walkDog()
+  .then((message) => {
+    console.log(message);
+    return cleanKitchen();
+  })
+  .then((value) => {
+    console.log(value);
+    return takeOutTrash();
+  })
+  .then((value) => {
+    console.log(value);
+    console.log("You have done all the chores");
+  });
