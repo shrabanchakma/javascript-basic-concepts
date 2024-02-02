@@ -2072,8 +2072,34 @@ everything after await is placed in an event queue
   JSON.stringify() 
   JSON.parse()
 */
-// fetch("person.json")
-//   .then((res) => res.json())
-//   .then((value) => console.log(value))
-//   .catch((error) => console.error(error));
+// fetch("person.json").then((res) => res.json());
+// .then((value) => console.log(value));
+// .catch((error) => console.error(error));
 // ==========================================================================VIDEO63
+// ##fetch = function used to make http requests to fetch resources;
+/*
+simplifies asynchronous data fetching in javascript and used for interacting with API's to retrieve and send data asynchronously over the web
+fetch(url, {options})
+*/
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+//   .then((res) => {
+//     if (!res.ok) {
+//       throw new Error("data not found");
+//     }
+//     return res.json();
+//   })
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error(error));
+fetchData();
+async function fetchData() {
+  try {
+    const res = await fetch("https://pokeapi.co/api/v2/pokemon/bulbasaur");
+    if (!res.ok) {
+      throw new Error("I didn't found any data");
+    }
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
