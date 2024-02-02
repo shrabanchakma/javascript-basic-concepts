@@ -2090,15 +2090,32 @@ fetch(url, {options})
 //   })
 //   .then((data) => console.log(data))
 //   .catch((error) => console.error(error));
-fetchData();
+// fetchData();
+// async function fetchData() {
+//   try {
+//     const res = await fetch("https://pokeapi.co/api/v2/pokemon/bulbasaur");
+//     if (!res.ok) {
+//       throw new Error("I didn't found any data");
+//     }
+//     const data = await res.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+// ==========================================================================VIDEO64
 async function fetchData() {
   try {
-    const res = await fetch("https://pokeapi.co/api/v2/pokemon/bulbasaur");
-    if (!res.ok) {
-      throw new Error("I didn't found any data");
-    }
+    const pokemonName = document
+      .getElementById("pokemonName")
+      .value.toLowerCase();
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
     const data = await res.json();
-    console.log(data);
+    const pokemonImage = data.sprites.front_default;
+    const imgElement = document.getElementById("pokemonSprite");
+    imgElement.src = pokemonImage;
+    imgElement.style.display = "block";
   } catch (error) {
     console.error(error);
   }
