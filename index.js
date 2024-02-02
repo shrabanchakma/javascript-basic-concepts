@@ -1955,43 +1955,125 @@ function playGame(playersChoice) {
   PENDING -> RESOLVED or REJECTED
   new Promise ((resolve, reject) => {asynchronous code})
 */
-function walkDog() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const dogWalked = true;
-      if (dogWalked) {
-        resolve("You Walked the dog");
-      } else {
-        reject("you did not walked the dog");
-      }
-    }, 3000);
-  });
-}
-function cleanKitchen() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("You cleaned the kitchen");
-    }, 1500);
-  });
-}
-function takeOutTrash() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("You took out the trash");
-    });
-  });
-}
+// function walkDog() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const dogWalked = true;
+//       if (dogWalked) {
+//         resolve("You Walked the dog");
+//       } else {
+//         reject("you did not walked the dog");
+//       }
+//     }, 3000);
+//   });
+// }
+// function cleanKitchen() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("You cleaned the kitchen");
+//     }, 1500);
+//   });
+// }
+// function takeOutTrash() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("You took out the trash");
+//     });
+//   });
+// }
 
-walkDog()
-  .then((message) => {
-    console.log(message);
-    return cleanKitchen();
-  })
-  .then((value) => {
-    console.log(value);
-    return takeOutTrash();
-  })
-  .then((value) => {
-    console.log(value);
-    console.log("You have done all the chores");
-  });
+// walkDog()
+//   .then((message) => {
+//     console.log(message);
+//     return cleanKitchen();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     return takeOutTrash();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     console.log("You have done all the chores");
+//   });
+// ==========================================================================VIDEO61
+
+/*
+async/ await = async-makes a function return a promise
+             = await-makes an async function to wait for the promise to resolve
+
+allows you to write asynchronous code in a synchronous manner
+async does not have resolve or reject parameter
+everything after await is placed in an event queue
+
+*/
+
+// function walkDog() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const dogWalked = true;
+//       if (dogWalked) {
+//         resolve("You Walked the dog");
+//       } else {
+//         reject("you did not walked the dog");
+//       }
+//     }, 3000);
+//   });
+// }
+// function cleanKitchen() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("You cleaned the kitchen");
+//     }, 1500);
+//   });
+// }
+// function takeOutTrash() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("You took out the trash");
+//     });
+//   });
+// }
+
+// walkDog()
+//   .then((message) => {
+//     console.log(message);
+//     return cleanKitchen();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     return takeOutTrash();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     console.log("You have done all the chores");
+//   });
+
+// async function doChores() {
+//   try {
+//     const walkDogResult = await walkDog();
+//     console.log(walkDogResult);
+
+//     const cleanKitchenResult = await cleanKitchen();
+//     console.log(cleanKitchenResult);
+
+//     const takeOutTrashResult = await takeOutTrash();
+//     console.log(takeOutTrashResult);
+
+//     console.log("All chores are done");
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+// doChores();
+// ==========================================================================VIDEO62
+/*
+  JSON = data-interchange format used to transmit data between server and web applications
+  JSON.stringify() 
+  JSON.parse()
+*/
+// fetch("person.json")
+//   .then((res) => res.json())
+//   .then((value) => console.log(value))
+//   .catch((error) => console.error(error));
+// ==========================================================================VIDEO63
